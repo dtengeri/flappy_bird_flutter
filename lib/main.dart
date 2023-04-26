@@ -1,3 +1,5 @@
+import 'package:flame/game.dart';
+import 'package:flappy_bird_flutter/flappy_bird_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,20 +13,9 @@ Future<void> main() async {
     DeviceOrientation.landscapeRight,
   ]);
 
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  runApp(
+    GameWidget(
+      game: FlappyBirdGame(),
+    ),
+  );
 }
