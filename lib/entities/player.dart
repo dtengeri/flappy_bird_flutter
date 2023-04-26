@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flappy_bird_flutter/flappy_bird_game.dart';
 import 'package:flutter/material.dart';
 
@@ -39,6 +40,7 @@ class Player extends SpriteAnimationComponent
   }
 
   void fly() {
+    FlameAudio.play('wings_flap_large.mp3');
     add(
       MoveByEffect(
         Vector2(0, -100),
